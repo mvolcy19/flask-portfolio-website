@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquise Volcy - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(to right, #d8a5d8, #e6b3e6);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5a3a5a;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8b5a8b;
+        }
+
+        /* About Me Section */
+        .about-section {
+            background-color: #f5e6f0;
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-left {
+            flex: 0 0 400px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 5px solid #d8a5d8;
+            margin-bottom: 20px;
+            
+        }
+
+        .name {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #2a2a2a;
+        }
+
+        .about-right {
+            flex: 1;
+            background: linear-gradient(135deg, #f0c4e6, #e6b3e6);
+            padding: 80px 60px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .about-right h1 {
+            font-size: 56px;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 8px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 60px 80px;
+            background-color: white;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-size: 52px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            color: #2a2a2a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            text-align: center;
+        }
+
+        .project-box {
+            width: 100%;
+            aspect-ratio: 1;
+            border: 8px solid #f0e6d2;
+            background-color: #faf8f0;
+            margin-bottom: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            border-color: #e6b3e6;
+        }
+
+        .project-card p {
+            font-size: 24px;
+            color: #2a2a2a;
+            font-weight: 400;
+        }
+
+        /* Games Section */
+        .games-section {
+            background: linear-gradient(135deg, #e6b3e6, #d8a5d8);
+            padding: 80px 60px;
+            min-height: 400px;
+            text-align: center;
+        }
+
+        .games-section h2 {
+            font-size: 52px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-section {
+                flex-direction: column;
+            }
+
+            .about-left {
+                flex: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-right h1,
+            .games-section h2,
+            .projects-section h2 {
+                font-size: 36px;
+            }
+
+            .name {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#social">Social Media</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-left">
+            <img src="https://via.placeholder.com/300x400/cccccc/666666?text=Your+Photo" alt="Marquise Volcy" class="profile-image">
+            <h1 class="name">MARQUISE VOLCY</h1>
+        </div>
+        <div class="about-right">
+            <h1>ABOUT ME</h1>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-box"></div>
+                <p>Figma</p>
+            </div>
+            <div class="project-card">
+                <div class="project-box"></div>
+                <p>Code</p>
+            </div>
+            <div class="project-card">
+                <div class="project-box"></div>
+                <p>Design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games-section">
+        <h2>GAMES</h2>
+    </section>
+</body>
+</html>
