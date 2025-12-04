@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+mkdir templates 
+
+<!Doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marquise Volcy - Portfolio</title>
-    <style>
-        * {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Marquise Volcy - Portfolio{% endblock %}</title>
+       <style>
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -190,53 +192,8 @@
             }
         }
     </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#social">Social Media</a></li>
-        </ul>
-    </nav>
-
-    <!-- About Me Section -->
-    <section id="about" class="about-section">
-        <div class="about-left">
-            <img src="https://via.placeholder.com/300x400/cccccc/666666?text=Your+Photo" alt="Marquise Volcy" class="profile-image">
-            <h1 class="name">MARQUISE VOLCY</h1>
-        </div>
-        <div class="about-right">
-            <h1>ABOUT ME</h1>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2>PROJECTS</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-box"></div>
-                <p>Figma</p>
-            </div>
-            <div class="project-card">
-                <div class="project-box"></div>
-                <p>Code</p>
-            </div>
-            <div class="project-card">
-                <div class="project-box"></div>
-                <p>Design</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section id="games" class="games-section">
-        <h2>GAMES</h2>
-    </section>
-</body>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
 </html>

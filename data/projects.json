@@ -1,0 +1,25 @@
+{
+    "projects": [
+        {
+            "id": 1, 
+            "title": "Example Project 1",
+            "category": "Web development",
+            "description": "A brief description of what this project does.",
+            "technologies": ["Python", "HTML", "CSS"],
+            "image": "images/projects/project1-thumb.png", 
+            "github_url": "https://github.com/mvolcy19/project-1",
+            "live_url": "https://Marquiseproject1.com"
+
+        },
+        {
+            "id": 2, 
+            "title": "Example Project 2",
+            "category": "design",
+            "description": "Another project description.",
+            "technologies": ["Figma", "Adobe Illustroator"],
+            "image": "images/projects/project2-thumb.png", 
+            "figma_protoype": "https://www.figma.com/proto/"
+        }
+    ]
+
+}
