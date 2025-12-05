@@ -1,0 +1,57 @@
+{%extends "base.html"%} {%block title%}{{ projects.title }}
+Volcy{% endblock %} {% block content %}
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>1
+    </ul>
+</nav>
+
+<article class="project-detail">
+    <h1>{{ project.title }}</h1>
+    <p class=""category">{{ project.category }} </p>
+    <p>{{ project.description }}</p>
+
+    <h2>Technologies Used</h2>
+    <ul>
+        {% for tech in project.technologies %}
+        <li>{{ tech }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Figma Prototype Embed -->
+     {% if projects.figma-prototype %}
+     <div class="figma-prototype" style="margin: 40 px 0;">
+        <h2>Interactive Prototype</h2>
+        <iframe
+            style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+            width="100%"
+            height="600"
+            src="{{ project.figma_prototype }}"
+            allowfullscreen
+            ></iframe>
+            <p style="margin-top: 10px;">
+                <a href="{{ project.figma_prototype }}" target="_blank"
+                  >Open in Figma →</a
+                >
+            </p>
+          </div>
+        {% endif %}
+
+        <!-- Project Images -->
+        {% if project.full_image %}
+        <div class="project-image">
+            <img 
+            src="{{ project.full_image }}" 
+            alt="{{ project.title }}" 
+            style = "max-width: 100%;"
+            />
+        </div>
+        {% endif %} {% if project.github_url %}
+        <a href="{{ project.github_url }}"> View on Github</a>
+        {% endif %} {% if project.live_url %}
+        <a href="{{ project.live_url }}"> View Live Site</a>
+        {% endif %} 
+      </article>
+{% endblock %}
