@@ -1,0 +1,7 @@
+with app.app_context():
+    contact_html = render_template("contact.html")
+    with open(os.path.join(output_dir, "contact.html"), "w", encoding="utf-8") as file:
+        file.write(contact_html)
+    print(f"Generated contact.html")
+
+    
