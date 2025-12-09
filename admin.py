@@ -18,7 +18,7 @@ def save_projects(projects):
         json.dump({"projects": projects}, file, indent=2, ensure_ascii=False)
     print("Project saved!")
 
-def find_prohect_by_id(projects, project_id):
+def find_project_by_id(projects, project_id):
     """Find a project by its ID."""
     for project in projects:
         if project.get ("id") == project_id:

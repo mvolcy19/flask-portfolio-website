@@ -1,16 +1,20 @@
-{%extends "base.html"%} {%block title%}{{ projects.title }}
-Volcy{% endblock %} {% block content %}
+{%extends "base.html"%} 
+
+{%block title%}{{ project.title }} - Marquise Volcy{% endblock %} 
+
+{% block content %}
 
 <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#projects">Projects</a></li>1
+        <li><a href="index.html#project">Project</a></li>1
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
 <article class="project-detail">
     <h1>{{ project.title }}</h1>
-    <p class=""category">{{ project.category }} </p>
+    <p class="category">{{ project.category }} </p>
     <p>{{ project.description }}</p>
 
     <h2>Technologies Used</h2>
@@ -20,8 +24,25 @@ Volcy{% endblock %} {% block content %}
         {% endfor %}
     </ul>
 
+     <!-- Project Images -->
+        {% if project.full_image %}
+        <div class="project.full_image">
+            <img 
+            src="{{ project.full_image }}" 
+            alt="{{ project.title }} screenshot" 
+            />
+        </div>
+        {% elif project.image %}
+        <div class="project-image">
+            <img 
+            src="{{ project.image }}" 
+            alt="{{ project.title }} screenshot" 
+            />
+        </div>
+        {% endif %}
+
     <!-- Figma Prototype Embed -->
-     {% if projects.figma-prototype %}
+     {% if project.figma_prototype %}
      <div class="figma-prototype" style="margin: 40 px 0;">
         <h2>Interactive Prototype</h2>
         <iframe

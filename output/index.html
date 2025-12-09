@@ -1,218 +1,444 @@
-mkdir templates 
-
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Marquise Volcy - Portfolio</title>
-       <style>
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marquise Volcy - Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f5f5f5;
-        }
+      body {
+        font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+        background-color: #f5f5f5;
+      }
 
-        /* Navigation */
-        nav {
-            background: linear-gradient(to right, #d8a5d8, #e6b3e6);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+      /* Navigation */
+      nav {
+        background: linear-gradient(to right, #e8c4e8, #d4a8d4);
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-        }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+      }
 
-        nav a {
-            text-decoration: none;
-            color: #5a3a5a;
-            font-size: 18px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+      nav a {
+        text-decoration: none;
+        color: #5a3a5a;
+        font-size: 18px;
+        font-weight: 400;
+        transition: color 0.3s;
+      }
 
-        nav a:hover {
-            color: #8b5a8b;
-        }
+      nav a:hover {
+        color: #8b5a8b;
+      }
 
-        /* About Me Section */
+      /* About Me Section */
+      .about-section {
+        background-color: #f5e6d2;
+        padding: 60px 80px;
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .about-left {
+        flex: 0 0 45%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border: none;
+        margin-bottom: 30px;
+      }
+
+      .name {
+        font-size: 56px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        color: #2a2a2a;
+        text-align: center;
+      }
+
+      .about-right {
+        flex: 1;
+        background: linear-gradient(135deg, #e8c4e8, #d4a8d4);
+        padding: 100px 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-right h1 {
+        font-size: 72px;
+        color: white;
+        font-weight: 300;
+        letter-spacing: 12px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      .about-right p {
+        color: white;
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: center;
+        margin-top: 30px;
+        max-width: 600px;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 80px 80px;
+        background-color: white;
+      }
+
+      .projects-section h2 {
+        text-align: center;
+        font-size: 72px;
+        font-weight: 300;
+        letter-spacing: 8px;
+        margin-bottom: 80px;
+        color: #2a2a2a;
+      }
+
+      /* Filter Buttons */
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 12px 30px;
+        border: 2px solid #d4a8d4;
+        background-color: white;
+        color: #5a3a5a;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: all 0.3s;
+        font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+      }
+
+      .filter-btn:hover {
+        background-color: #f5e6f0;
+        transform: translateY(-2px);
+      }
+
+      .filter-btn.active {
+        background-color: #d4a8d4;
+        color: white;
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .project-card {
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .project-card.hidden {
+        display: none;
+      }
+
+      .project-card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .project-box {
+        width: 100%;
+        aspect-ratio: 1;
+        border: 8px solid #f0e6d2;
+        background-color: #faf8f0;
+        margin-bottom: 20px;
+        transition: transform 0.3s, border-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .project-box:hover {
+        transform: translateY(-5px);
+        border-color: #d4a8d4;
+      }
+
+      .project-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .project-card p {
+        font-size: 28px;
+        color: #2a2a2a;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      /* Games Section */
+      .games-section {
+        background: linear-gradient(135deg, #e8c4e8, #d4a8d4);
+        padding: 120px 60px;
+        min-height: 400px;
+        text-align: center;
+      }
+
+      .games-section h2 {
+        font-size: 72px;
+        font-weight: 300;
+        letter-spacing: 12px;
+        color: white;
+        margin-bottom: 40px;
+      }
+
+      .games-section p {
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      /* Project Detail Page */
+      .project-detail {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+
+      .project-detail h1 {
+        font-size: 48px;
+        color: #2a2a2a;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+
+      .category {
+        color: #8b5a8b;
+        font-style: italic;
+        margin-bottom: 30px;
+        font-size: 20px;
+      }
+
+      .project-detail h2 {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #2a2a2a;
+        font-weight: 300;
+      }
+
+      .project-detail p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .project-detail ul {
+        list-style-position: inside;
+        margin-bottom: 20px;
+      }
+
+      .project-detail li {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .project-detail a {
+        display: inline-block;
+        margin: 10px 20px 10px 0;
+        padding: 15px 30px;
+        background-color: #d4a8d4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .project-detail a:hover {
+        background-color: #c48fc4;
+      }
+
+      .project-image {
+        margin: 40px 0;
+      }
+
+      .project-image img {
+        width: 100%;
+        border: 8px solid #f0e6d2;
+        border-radius: 5px;
+      }
+
+      .figma-prototype {
+        margin: 50px 0;
+      }
+
+      /* Contact Page */
+      .contact-section {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 80px 40px;
+        text-align: center;
+      }
+
+      .contact-section h1 {
+        font-size: 52px;
+        color: #2a2a2a;
+        font-weight: 300;
+        letter-spacing: 4px;
+        margin-bottom: 30px;
+      }
+
+      .contact-section p {
+        font-size: 18px;
+        line-height: 1.8;
+        margin: 30px 0;
+      }
+
+      .contact-info {
+        margin: 50px 0;
+      }
+
+      .contact-info a {
+        display: block;
+        margin: 20px 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #e8c4e8, #d4a8d4);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .contact-info a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(212, 168, 212, 0.4);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
         .about-section {
-            background-color: #f5e6f0;
-            padding: 40px 60px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
+          flex-direction: column;
         }
 
         .about-left {
-            flex: 0 0 400px;
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border: 5px solid #d8a5d8;
-            margin-bottom: 20px;
-            
-        }
-
-        .name {
-            font-size: 48px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            color: #2a2a2a;
-        }
-
-        .about-right {
-            flex: 1;
-            background: linear-gradient(135deg, #f0c4e6, #e6b3e6);
-            padding: 80px 60px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .about-right h1 {
-            font-size: 56px;
-            color: white;
-            font-weight: 300;
-            letter-spacing: 8px;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            padding: 60px 80px;
-            background-color: white;
-        }
-
-        .projects-section h2 {
-            text-align: center;
-            font-size: 52px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 60px;
-            color: #2a2a2a;
+          flex: none;
         }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+          grid-template-columns: repeat(2, 1fr);
         }
 
-        .project-card {
-            text-align: center;
+        nav ul {
+          gap: 40px;
         }
 
-        .project-box {
-            width: 100%;
-            aspect-ratio: 1;
-            border: 8px solid #f0e6d2;
-            background-color: #faf8f0;
-            margin-bottom: 20px;
-            transition: transform 0.3s, border-color 0.3s;
+        .projects-section {
+          padding: 60px 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 0 20px;
         }
 
-        .project-box:hover {
-            transform: translateY(-5px);
-            border-color: #e6b3e6;
+        nav a {
+          font-size: 16px;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-right h1,
+        .games-section h2,
+        .projects-section h2 {
+          font-size: 48px;
+          letter-spacing: 6px;
+        }
+
+        .name {
+          font-size: 36px;
+        }
+
+        .about-section {
+          padding: 40px 20px;
+        }
+
+        .about-right {
+          padding: 60px 30px;
+        }
+
+        .projects-section {
+          padding: 40px 20px;
+        }
+
+        .filter-btn {
+          padding: 10px 20px;
+          font-size: 14px;
         }
 
         .project-card p {
-            font-size: 24px;
-            color: #2a2a2a;
-            font-weight: 400;
+          font-size: 22px;
         }
-
-        /* Games Section */
-        .games-section {
-            background: linear-gradient(135deg, #e6b3e6, #d8a5d8);
-            padding: 80px 60px;
-            min-height: 400px;
-            text-align: center;
-        }
-
-        .games-section h2 {
-            font-size: 52px;
-            font-weight: 300;
-            letter-spacing: 8px;
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .about-section {
-                flex-direction: column;
-            }
-
-            .about-left {
-                flex: none;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            nav ul {
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-right h1,
-            .games-section h2,
-            .projects-section h2 {
-                font-size: 36px;
-            }
-
-            .name {
-                font-size: 36px;
-            }
-        }
+      }
     </style>
-    </head>
-    <body>
-        
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#social">Social Media</a></li>
-        </ul>
-    </nav>
-
+  </head>
+  <body>
+    
+<!-- Navigation -->
+<nav>
+  <ul>
+    <li><a href="#about">About me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#social">Social Media</a></li>
+  </ul>
+</nav>
 
 <!-- About Me Section -->
 <section id="about" class="about-section">
   <div class="about-left">
     <img
-      src="https://via.placeholder.com/300x400/cccccc/666666?text=Your+Photo"
+      src="/Users/marquisevolcy/Desktop/Coding /cs121-labs-mvolcy19/FinalProject-Portfolio /final-project-mvolcy19/Images/profile.JPEG"
       alt="Marquise Volcy"
       class="profile-image"
     />
@@ -220,43 +446,61 @@ mkdir templates
   </div>
   <div class="about-right">
     <h1>ABOUT ME</h1>
+    <p> 
+      Hi! I'm Marquise Volcy , a passionate web developer and designer with a love for creating engaging and functional digital experiences. I specialize in front-end development and UI/UX design, crafting visually appealing and user-friendly websites. 
+    </p>
   </div>
 </section>
 
-<!-- Projects Section  -->
- <section id="projects" class="projects-section">
-    <h2>PROJECTS</h2>
-    <div class="projects-grid">
-        
-        <div class="project-card" data-category="Web development">
-            <a href="project-1.html">
-                <div class="project-box">
-                   
-                    <img src="images/projects/project1-thumb.png" alt="Example Project 1" />
-                    
-                  </div>
-                 <p>Example Project 1</p>
-                </a>
-              </div>
-            
-        <div class="project-card" data-category="design">
-            <a href="project-2.html">
-                <div class="project-box">
-                   
-                    <img src="images/projects/project2-thumb.png" alt="Example Project 2" />
-                    
-                  </div>
-                 <p>Example Project 2</p>
-                </a>
-              </div>
-            
-        </div>
-    </section>
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <h2>PROJECTS</h2>
 
-    <!-- Games Section -->
+  <!-- Filter buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="web development">Web Dev</button>
+    <button class="filter-btn" data-category="games">Games</button>
+    <button class="filter-btn" data-category="design">Design</button>
+  </div>
+
+  <div class="projects-grid">
+    
+  </div>
+</section>
+
+<!-- Games Section -->
 <section id="games" class="games-section">
   <h2>GAMES</h2>
 </section>
 
-    </body>
+<script>
+  // Filter projects by category
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
+
+      // Update active button
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Filter projects
+      projectCards.forEach((card) => {
+        if (
+          category === "all" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
+
+  </body>
 </html>
