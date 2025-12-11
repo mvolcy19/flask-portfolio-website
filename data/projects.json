@@ -1,25 +1,26 @@
 {
     "projects": [
         {
-            "id": 1, 
-            "title": "Example Project 1",
-            "category": "Web development",
-            "description": "A brief description of what this project does.",
-            "technologies": ["Python", "HTML", "CSS"],
-            "image": "images/projects/project1-thumb.png", 
-            "github_url": "https://github.com/mvolcy19/project-1",
-            "live_url": "https://Marquiseproject1.com"
-
+            "id": 1,
+            "title": "Project 1",
+            "category": "Web design",
+            "description": "UX/UI design project.",
+            "technologies": [
+                "Figma"
+            ],
+            "image": "Images/Figma Project 1.png",
+            "figma_prototype": "https://www.figma.com/proto/FfJALZgUlbuOnkl8dP4Q23/Marquise-Volcy--Ecommerce-Website-Project-2?node-id=36-530&p=f&t=GPm3VIt4xamktwi8-1&scaling=scale-down&content-scaling=fixed&page-id=28%3A438&starting-point-node-id=36%3A530"
         },
         {
-            "id": 2, 
-            "title": "Example Project 2",
-            "category": "design",
-            "description": "Another project description.",
-            "technologies": ["Figma", "Adobe Illustroator"],
-            "image": "images/projects/project2-thumb.png", 
-            "figma_protoype": "https://www.figma.com/proto/"
+            "id": 2,
+            "title": "Project 2",
+            "category": "Web design",
+            "description": "UX/UI design project.",
+            "technologies": [
+                "Figma"
+            ],
+            "image": "Images/Figma Project 2.png",
+            "figma_prototype": "https://www.figma.com/proto/UmtzQMUgBWepKdkLHpY28F/Marquise-Volcy--Doctor-s-Office-Website--Project-1?page-id=1%3A3&node-id=9-46&starting-point-node-id=9%3A46&scaling=scale-down&content-scaling=fixed&t=9BBadYtzkmFXmyLH-1"
         }
     ]
-
 }

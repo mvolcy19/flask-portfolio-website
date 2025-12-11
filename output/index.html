@@ -427,10 +427,7 @@
   <ul>
     <li><a href="#about">About me</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#games">Games</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#social">Social Media</a></li>
+    <li><a href="contact.html">Social Media</a></li>
   </ul>
 </nav>
 
@@ -458,41 +455,55 @@
 
   <!-- Filter buttons -->
   <div class="filter-buttons">
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="web development">Web Dev</button>
+    <button class="filter-btn" data-category="web">Web Dev</button>
     <button class="filter-btn" data-category="games">Games</button>
     <button class="filter-btn" data-category="design">Design</button>
   </div>
 
   <div class="projects-grid">
     
+    <div class="project-card" data-category="Web design">
+      <a href="project-1.html">
+        <div class="project-box">
+          
+          <img src="Images/Figma Project 1.png" alt="Project 1" />
+          
+        </div>
+        <p>Project 1</p>
+      </a>
+    </div>
+    
+    <div class="project-card" data-category="Web design">
+      <a href="project-2.html">
+        <div class="project-box">
+          
+          <img src="Images/Figma Project 2.png" alt="Project 2" />
+          
+        </div>
+        <p>Project 2</p>
+      </a>
+    </div>
+    
   </div>
 </section>
 
-<!-- Games Section -->
-<section id="games" class="games-section">
-  <h2>GAMES</h2>
-</section>
-
 <script>
-  // Filter projects by category
+  // Filter projects by category (case-insensitive, partial match)
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const category = button.getAttribute("data-category");
+      const category = (button.getAttribute("data-category") || "").toLowerCase();
 
       // Update active button
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Filter projects
+      // Filter projects (allow partial matching so "web" matches "web design" / "web development")
       projectCards.forEach((card) => {
-        if (
-          category === "all" ||
-          card.getAttribute("data-category") === category
-        ) {
+        const cardCat = (card.getAttribute("data-category") || "").toLowerCase();
+        if (category === "all" || cardCat.includes(category)) {
           card.classList.remove("hidden");
         } else {
           card.classList.add("hidden");
