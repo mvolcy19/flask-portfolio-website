@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marquise Volcy - Portfolio</title>
+    <title>Buzzing Within - Marquise Volcy</title>
     <style>
       * {
         margin: 0;
@@ -422,151 +422,45 @@
   </head>
   <body>
     
-<!-- Navigation -->
+
 <nav>
-  <ul>
-    <li><a href="#about">About me</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="contact.html">Social Media</a></li>
-  </ul>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#project">Project</a></li>1
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
-<!-- About Me Section -->
-<section id="about" class="about-section">
-  <div class="about-left">
-    <img
-      src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/profile_ndolav.jpg"
-      alt="Marquise Volcy"
-      class="profile-image"
-    />
-    <h1 class="name">MARQUISE VOLCY</h1>
-  </div>
-  <div class="about-right">
-    <h1>ABOUT ME</h1>
-    <p> 
-      Hi! I'm Marquise Volcy , a passionate web developer and designer with a love for creating engaging and functional digital experiences. I specialize in front-end development and UI/UX design, crafting visually appealing and user-friendly websites. 
-    </p>
-  </div>
-</section>
+<article class="project-detail">
+    <h1>Buzzing Within</h1>
+    <p class="category">Design </p>
+    <p>Six Word Memoir Graphic Design</p>
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
-  <h2>PROJECTS</h2>
+    <h2>Technologies Used</h2>
+    <ul>
+        
+        <li>Procreate</li>
+        
+        <li>Adobe Illustrator</li>
+        
+    </ul>
 
-  <!-- Filter buttons -->
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="web">Web Dev</button>
-    <button class="filter-btn" data-category="design">Design</button>
-  </div>
+     <!-- Project Images -->
+        
+        <div class="project-image">
+            <img 
+            src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/Buzzing_zkk1kj.png" 
+            alt="Buzzing Within screenshot" 
+            />
+        </div>
+        
 
-  <div class="projects-grid">
-    
-    <div class="project-card" data-category="Web Development">
-      <a href="project-1.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/Figma-Project1_za3zvo.jpg" alt="Magnolia Ecommerce Website" />
-          
-        </div>
-        <p>Magnolia Ecommerce Website</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Web Development">
-      <a href="project-2.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/Figma-Project2_aqxbgx.png" alt="Carolina Doctor&#39;s Office Website" />
-          
-        </div>
-        <p>Carolina Doctor&#39;s Office Website</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Web Development">
-      <a href="project-3.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/PHP-Project3_vlpfv3.png" alt="Heart Rate Calculator" />
-          
-        </div>
-        <p>Heart Rate Calculator</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Design">
-      <a href="project-4.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/GestaltG_fjhoof.png" alt="Gestalt G" />
-          
-        </div>
-        <p>Gestalt G</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Design">
-      <a href="project-5.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/24Gestalt_Pieces1_dkbpfv.png" alt="24 Gestalt Pieces 1" />
-          
-        </div>
-        <p>24 Gestalt Pieces 1</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Design">
-      <a href="project-6.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/24Pieces2_pfavbc.png" alt="24 Gestalt Pieces 2" />
-          
-        </div>
-        <p>24 Gestalt Pieces 2</p>
-      </a>
-    </div>
-    
-    <div class="project-card" data-category="Design">
-      <a href="project-7.html">
-        <div class="project-box">
-          
-          <img src="https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/Buzzing_zkk1kj.png" alt="Buzzing Within" />
-          
-        </div>
-        <p>Buzzing Within</p>
-      </a>
-    </div>
-    
-  </div>
-</section>
+    <!-- Figma Prototype Embed -->
+     
 
-<script>
-  // Filter projects by category (case-insensitive, partial match)
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = (button.getAttribute("data-category") || "").toLowerCase();
-
-      // Update active button
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Filter projects (allow partial matching so "web" matches "web design" / "web development")
-      projectCards.forEach((card) => {
-        const cardCat = (card.getAttribute("data-category") || "").toLowerCase();
-        if (category === "all" || cardCat.includes(category)) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
-        }
-      });
-    });
-  });
-</script>
+        <!-- Project Images -->
+           
+      </article>
 
   </body>
 </html>

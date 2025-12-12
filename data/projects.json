@@ -1,26 +1,86 @@
 {
-    "projects": [
-        {
-            "id": 1,
-            "title": "Project 1",
-            "category": "Web design",
-            "description": "UX/UI design project.",
-            "technologies": [
-                "Figma"
-            ],
-            "image": "Images/Figma Project 1.png",
-            "figma_prototype": "https://www.figma.com/proto/FfJALZgUlbuOnkl8dP4Q23/Marquise-Volcy--Ecommerce-Website-Project-2?node-id=36-530&p=f&t=GPm3VIt4xamktwi8-1&scaling=scale-down&content-scaling=fixed&page-id=28%3A438&starting-point-node-id=36%3A530"
-        },
-        {
-            "id": 2,
-            "title": "Project 2",
-            "category": "Web design",
-            "description": "UX/UI design project.",
-            "technologies": [
-                "Figma"
-            ],
-            "image": "Images/Figma Project 2.png",
-            "figma_prototype": "https://www.figma.com/proto/UmtzQMUgBWepKdkLHpY28F/Marquise-Volcy--Doctor-s-Office-Website--Project-1?page-id=1%3A3&node-id=9-46&starting-point-node-id=9%3A46&scaling=scale-down&content-scaling=fixed&t=9BBadYtzkmFXmyLH-1"
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "title": "Magnolia Ecommerce Website",
+      "category": "Web Development",
+      "description": "UX/UI design of a skin care Brand.",
+      "technologies": [
+        "Figma"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/Figma-Project1_za3zvo.jpg",
+      "figma_prototype": "https://www.figma.com/proto/FfJALZgUlbuOnkl8dP4Q23/Marquise-Volcy--Ecommerce-Website-Project-2?node-id=36-530&p=f&t=GPm3VIt4xamktwi8-1&scaling=scale-down&content-scaling=fixed&page-id=28%3A438&starting-point-node-id=36%3A530"
+    },
+    {
+      "id": 2,
+      "title": "Carolina Doctor's Office Website",
+      "category": "Web Development",
+      "description": "UX/UI design of a doctor's office website.",
+      "technologies": [
+        "Figma"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/Figma-Project2_aqxbgx.png",
+      "figma_prototype": "https://www.figma.com/proto/UmtzQMUgBWepKdkLHpY28F/Marquise-Volcy--Doctor-s-Office-Website--Project-1?page-id=1%3A3&node-id=9-46&starting-point-node-id=9%3A46&scaling=scale-down&content-scaling=fixed&t=9BBadYtzkmFXmyLH-1"
+    },
+    {
+      "id": 3,
+      "title": "Heart Rate Calculator",
+      "category": "Web Development",
+      "description": "Simple heart rate calculator",
+      "link": "https://cs.furman.edu/~mvolcy/program1/",
+      "technologies": [
+        "PHP"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/PHP-Project3_vlpfv3.png",
+      "live_url": "https://cs.furman.edu/~mvolcy/program1/index.php"
+    },
+    {
+      "id": 4,
+      "title": "Gestalt G",
+      "category": "Design",
+      "description": "Graphic Design",
+      "link": "",
+      "technologies": [
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508714/GestaltG_fjhoof.png"
+    },
+    {
+      "id": 5,
+      "title": "24 Gestalt Pieces 1",
+      "category": "Design",
+      "description": "Graphic Design",
+      "link": "",
+      "technologies": [
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/24Gestalt_Pieces1_dkbpfv.png"
+    },
+    {
+      "id": 6,
+      "title": "24 Gestalt Pieces 2",
+      "category": "Design",
+      "description": "Graphic Design",
+      "link": "",
+      "technologies": [
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/24Pieces2_pfavbc.png"
+    },
+    {
+      "id": 7,
+      "title": "Buzzing Within",
+      "category": "Design",
+      "description": "Six Word Memoir Graphic Design",
+      "link": "",
+      "technologies": [
+        "Procreate",
+        "Adobe Illustrator"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/Buzzing_zkk1kj.png"
+    }
+  ]
 }
