@@ -56,17 +56,6 @@ def generate_static_site():
     output_dir = os.path.join(BASE_DIR, "output")
     os.makedirs(output_dir, exist_ok=True)
 
-    # Copy images folder if present (check common casings)
-    for images_folder in ("images", "Images"):
-        src = os.path.join(BASE_DIR, images_folder)
-        if os.path.exists(src):
-            output_images = os.path.join(output_dir, "images")
-            if os.path.exists(output_images):
-                shutil.rmtree(output_images)
-            shutil.copytree(src, output_images)
-            print(f"Copied {src} -> {output_images}")
-            break
-
     # Render index page with the projects list (template expects `projects`)
     with app.app_context():
         index_html = render_template("index.html", projects=projects)

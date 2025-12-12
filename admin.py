@@ -85,11 +85,10 @@ def list_projects():
         print(f"  Category: {project.get('category', 'N/A')}")
         print(f"  Description: {project.get('description', 'N/A')[:50]}...")
 
-#def edit_project():
+#def add edit_project():
 
-#def delete_project():
+#def add delete_project():
 
-#def search_projects():
 
 def main():
     """Main admin menu"""
