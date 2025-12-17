@@ -81,6 +81,17 @@
         "Adobe Illustrator"
       ],
       "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765508715/Buzzing_zkk1kj.png"
+    },
+    {
+      "id": 8,
+      "title": "Dior",
+      "category": "design",
+      "description": "Dior J'adore Eau de Parfum Poster Design",
+      "link": "",
+      "technologies": [
+        "Canva"
+      ],
+      "image": "https://res.cloudinary.com/do6emnzpx/image/upload/v1765962836/Lilies_qopkxi.jpg"
     }
   ]
 }
